@@ -3,7 +3,7 @@ import { User } from '../model/User';
 
 function userReducer(state: User, action: Actions): User {
   switch (action.type) {
-    case ActionType.ON_CHANGE: {
+    case ActionType.ON_CHANGE_USER: {
       return {
         ...state,
         name: action.payload.name,

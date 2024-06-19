@@ -1,9 +1,9 @@
 
-export class Artikal {
-    name : string | undefined;
-    price : number | undefined;
-    amount : number | undefined;
-    description : string | undefined;
+export interface Artikal {
+    name : string ;
+    price : number ;
+    amount : number ;
+    description : string;
 }
 
 export const initialState: Artikal = {

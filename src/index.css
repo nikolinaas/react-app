@@ -69,3 +69,23 @@ border-color: #00809a !important;
 .appBar{
   background-color: #00809a !important;
 }
+
+.table{
+  height: 400px;
+}
+
+.tableHeadClass{
+background-color: #00809a;
+
+}
+
+.tableCellHeader{
+  color: white !important;
+  font-size: larger !important;
+}
+
+.tableBodyClass{
+  height: calc(100vh - 310px) !important;
+  overflow: scroll !important;
+ 
+}

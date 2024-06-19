@@ -8,6 +8,7 @@ import { theme } from './model/Theme';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LogInView from './views/LogInView';
 import Home from './views/Home';
+import LoginPage from './App';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

@@ -1,8 +1,9 @@
 import { Button, Grid, TextField, withStyles } from "@material-ui/core";
 import { StyledTxtField } from "./StyledTxtField";
-import { ArtikalContext } from "../ArtikalContext";
+import { ArtikalContext, ArtikalProvider } from "../ArtikalContext";
 import { useContext } from "react";
 import { ActionType } from "../Actions";
+import { Artikal } from "../model/Artikal";
 
 
 
@@ -14,6 +15,26 @@ const AddModal = () => {
    
     }
 
+    function addArtikal(){
+
+  
+      console.log(artikalContext?.artikal);
+
+      if(artikalContext){
+        alert("kontekst nije nnull")
+        var artikal :Artikal = {
+          name: artikalContext.artikal.name,
+          price: artikalContext.artikal.price,
+          amount: artikalContext.artikal.amount,
+          description: artikalContext?.artikal.description
+        }
+        localStorage.setItem("artikal", JSON.stringify(artikal));
+      }
+      
+
+    
+
+    }
 
    function onChangeNumber(e:any) : void{
       const re = /^[0-9\b]+$/;
@@ -25,6 +46,7 @@ const AddModal = () => {
       }
   }
     return (
+      
       <div className="modal-wrapper">
         <div className="modal">
           <form>
@@ -41,7 +63,7 @@ const AddModal = () => {
                         variant="outlined"
                         onChange={(event) =>
                           artikalContext?.dispatch({
-                            type: ActionType.ON_CHANGE,
+                            type: ActionType.ON_CHANGE_ARTIKAL,
                             payload: {name : event.target.value, amount : artikalContext.artikal.amount, price :artikalContext.artikal.price , description :artikalContext.artikal.description  },
                           })
                         }
@@ -58,8 +80,9 @@ const AddModal = () => {
                         name="description"
                         variant="outlined"
                         onChange={(event) =>
-                          setState({
-                            [event.target.name]: event.target.value,
+                          artikalContext?.dispatch({
+                            type: ActionType.ON_CHANGE_ARTIKAL,
+                            payload: {name : artikalContext.artikal.name, amount : artikalContext.artikal.amount, price :artikalContext.artikal.price , description :event.target.value  },
                           })
                         }
                         required
@@ -98,6 +121,7 @@ const AddModal = () => {
                         variant="contained"
                         type="submit"
                         className="button-block"
+                        onClick={addArtikal}
                       >
                         ADD
                       </Button>

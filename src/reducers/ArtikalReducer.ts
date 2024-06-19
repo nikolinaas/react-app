@@ -3,7 +3,7 @@ import { Artikal } from "../model/Artikal";
 
 function artikalReducer(state: Artikal, action: Actions): Artikal {
     switch (action.type) {
-      case ActionType.ON_CHANGE: {
+      case ActionType.ON_CHANGE_ARTIKAL: {
         return {
           ...state,
           name: action.payload.name

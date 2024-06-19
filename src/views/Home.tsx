@@ -13,15 +13,17 @@ import {
 import Table from './Table';
 import TableView from './Table';
 import AddOptionView from './AddOptionView';
+import { ArtikalProvider } from '../ArtikalContext';
+import { UserProvider } from '../UserContext';
 const Home = () => {
   const [checked, setChecked] = useState(true);
 
   return (
-  
+  <ArtikalProvider>
         <div style={{ padding: 30 }}>
       <AppBar position="static"  className='appBar'>
 <Toolbar>
-<Grid container justify="center" wrap="wrap">
+<Grid container wrap="wrap">
 <Grid item>
 <Typography variant="h6">{"Warehouse"}</Typography>
 </Grid>
@@ -31,8 +33,7 @@ const Home = () => {
 <AddOptionView/>
 <TableView/>
     </div>
-    
-  
+    </ArtikalProvider>
   );
 };
 
