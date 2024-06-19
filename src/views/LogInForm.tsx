@@ -32,21 +32,24 @@ const LogInForm = () => {
 
 
         var items: Artikal[] = [
-            { name: "Artikal1", amount: 40, description: "Opis artikla 1", price: 50 },
-            { name: "Artikal2", amount: 50, description: "Opis artikla 2", price: 55 },
-            { name: "Artikal3", amount: 60, description: "Opis artikla 3", price: 60 },
-            { name: "Artikal4", amount: 70, description: "Opis artikla 4", price: 55 },
-            { name: "Artikal5", amount: 40, description: "Opis artikla 5", price: 70 },
-            { name: "Artikal6", amount: 30, description: "Opis artikla 6", price: 75 },
-            { name: "Artikal7", amount: 20, description: "Opis artikla 7", price: 50 },
-            { name: "Artikal8", amount: 10, description: "Opis artikla 8", price: 59 },
-            { name: "Artikal9", amount: 40, description: "Opis artikla 9", price: 40 },
-            { name: "Artikal10", amount: 50, description: "Opis artikla 10", price: 30 },
+            {artikalId:0, name: "Artikal1", amount: 40, description: "Opis artikla 1", price: 50 },
+            {artikalId:1, name: "Artikal2", amount: 50, description: "Opis artikla 2", price: 55 },
+            {artikalId:2, name: "Artikal3", amount: 60, description: "Opis artikla 3", price: 60 },
+            {artikalId:3, name: "Artikal4", amount: 70, description: "Opis artikla 4", price: 55 },
+            {artikalId:4, name: "Artikal5", amount: 40, description: "Opis artikla 5", price: 70 },
+            {artikalId:5, name: "Artikal6", amount: 30, description: "Opis artikla 6", price: 75 },
+            {artikalId:6, name: "Artikal7", amount: 20, description: "Opis artikla 7", price: 50 },
+            {artikalId:7, name: "Artikal8", amount: 10, description: "Opis artikla 8", price: 59 },
+            {artikalId:8, name: "Artikal9", amount: 40, description: "Opis artikla 9", price: 40 },
+            {artikalId:9, name: "Artikal10", amount: 50, description: "Opis artikla 10", price: 30 },
         ]
 
         localStorage.setItem("items",JSON.stringify(items));
+        localStorage.setItem("latestId", "9");
 
     }
+
+  
 
     useEffect(() => {
 
@@ -56,7 +59,7 @@ const LogInForm = () => {
 
 
     const navigate = useNavigate();
-    
+
     function handleSubmit() {
         console.log(userContext);
          navigate('/home');

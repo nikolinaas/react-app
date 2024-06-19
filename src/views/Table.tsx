@@ -30,9 +30,21 @@ const TableView = () => {
      
   },[])
 
+function deleteArtikal(article:any){
 
+  let items = localStorage.getItem("items");
+  let arrayItems = [];
+  if(items!=null){
+    arrayItems=JSON.parse(items);
+    
+  }
+  arrayItems = arrayItems.filter((item:any) => item.artikalId !== article.artikalId) ;
 
+    localStorage.setItem("items", JSON.stringify(arrayItems));
+    setRows(arrayItems);
+  
 
+}
 
   return (
     <TableContainer component={Paper}>
@@ -53,7 +65,7 @@ const TableView = () => {
               <TableCell align="center" style={{ overflow: 'wrap', width: '20%' }}>{row.amount}</TableCell>
               <TableCell align="center" style={{ overflow: 'wrap', width: '20%' }}>{row.price}</TableCell>
               <TableCell align="center" style={{ overflow: 'wrap', width: '20%' }}>{row.description}</TableCell>
-              <TableCell align="center"><Button className='buttonClass'><DeleteIcon></DeleteIcon>Delete</Button></TableCell>
+              <TableCell align="center"><Button className='buttonClass' onClick={()=>deleteArtikal(row)}><DeleteIcon></DeleteIcon>Delete</Button></TableCell>
             </TableRow>
           ))}
         </TableBody>

@@ -6,7 +6,10 @@ function artikalReducer(state: Artikal, action: Actions): Artikal {
       case ActionType.ON_CHANGE_ARTIKAL: {
         return {
           ...state,
-          name: action.payload.name
+          name: action.payload.name,
+          description : action.payload.description,
+          amount : action.payload.amount,
+          price : action.payload.price
           //dodati ostale clanove klase
         };
       }

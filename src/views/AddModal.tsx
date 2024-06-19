@@ -21,14 +21,26 @@ const AddModal = () => {
       console.log(artikalContext?.artikal);
 
       if(artikalContext){
-        alert("kontekst nije nnull")
+        let latestId = localStorage.getItem("latestId");
+        let id : number = 0;
+        if(latestId)
+          id = parseInt(latestId)+1;
+        localStorage.setItem("latestId",JSON.stringify(id));
         var artikal :Artikal = {
+          artikalId:id,
           name: artikalContext.artikal.name,
           price: artikalContext.artikal.price,
           amount: artikalContext.artikal.amount,
-          description: artikalContext?.artikal.description
+          description: artikalContext.artikal.description
         }
-        localStorage.setItem("artikal", JSON.stringify(artikal));
+        let items = localStorage.getItem("items");
+        let arrayItems = [];
+        if(items!=null){
+          arrayItems=JSON.parse(items);
+        }
+
+        arrayItems.push(artikal);
+        localStorage.setItem("items", JSON.stringify(arrayItems));
       }
       
 
@@ -82,7 +94,7 @@ const AddModal = () => {
                         onChange={(event) =>
                           artikalContext?.dispatch({
                             type: ActionType.ON_CHANGE_ARTIKAL,
-                            payload: {name : artikalContext.artikal.name, amount : artikalContext.artikal.amount, price :artikalContext.artikal.price , description :event.target.value  },
+                            payload: {name : artikalContext.artikal.name, amount : artikalContext.artikal.amount, price :artikalContext.artikal.price , description : event.target.value  },
                           })
                         }
                         required
@@ -97,7 +109,10 @@ const AddModal = () => {
                         name="price"
                         variant="outlined"
                         onChange={(event) =>
-                          onChangeNumber(event)
+                          artikalContext?.dispatch({
+                            type: ActionType.ON_CHANGE_ARTIKAL,
+                            payload: {name : artikalContext.artikal.name, amount : artikalContext.artikal.amount, price : parseFloat(event.target.value) , description : artikalContext.artikal.description  },
+                          })
                         }
                         required
                       />
@@ -111,7 +126,10 @@ const AddModal = () => {
                         name="amount"
                         variant="outlined"
                         onChange={(event) =>
-                          onChangeNumber(event)
+                          artikalContext?.dispatch({
+                            type: ActionType.ON_CHANGE_ARTIKAL,
+                            payload: {name : artikalContext.artikal.name, amount : parseInt(event.target.value), price :artikalContext.artikal.price , description :  artikalContext.artikal.description },
+                          })
                         }
                         required
                       />
