@@ -13,7 +13,7 @@ const LoginPage = () => {
 
 
   return (
-    <div style={{ padding: 30 }}>
+    <div style={{ padding: 30, height:'100%' }}>
    
     </div>
   );
