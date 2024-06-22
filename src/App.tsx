@@ -31,12 +31,9 @@ const App = () => {
     if (logedIn)
       user = JSON.parse(logedIn);
 
-    return user == true ? <Outlet/> : <Navigate to="/login" replace />;
+    return user == true ? <Outlet /> : <Navigate to="/login" replace />;
   }
 
-
-
-  const [value, setValue] = useState(ActionType.ON_CHANGE_USER);
   return (
     <UserProvider>
       <BrowserRouter>

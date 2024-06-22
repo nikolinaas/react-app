@@ -6,7 +6,7 @@ import Modal from "@mui/material/Modal";
 import { Box, Typography } from "@mui/material";
 import SearchBar from "./SearchForm";
 
-const AddOptionView = () => {
+const AddOptionView = (onSearch:any) => {
 
     const style = {
         position: 'absolute' as 'absolute',

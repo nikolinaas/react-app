@@ -3,13 +3,12 @@ import { User, initialState } from "./model/User";
 import { Actions } from "./Actions";
 import userReducer from "./reducers/UserReducer";
 
-interface UserContextType {
-  user: User;
-  dispatch: Dispatch<any>;
-}
+ interface UserContextType {
+    user: User;
+    dispatch: Dispatch<Actions>;
+  }
 
   const UserContext = createContext<UserContextType | undefined>(undefined);
-
 
   interface UserProviderProps {
     children: ReactNode;
@@ -20,5 +19,4 @@ interface UserContextType {
     return <UserContext.Provider value={{ user, dispatch }}>{children}</UserContext.Provider>;
   };
   
-export { UserContext, UserProvider };  
-
+export { UserContext, UserProvider };

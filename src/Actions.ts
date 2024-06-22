@@ -1,11 +1,19 @@
+import { Artikal } from "./model/Artikal";
+
 export enum ActionType {
     ON_CHANGE_USER,
     ON_LOGIN_USER,
     ON_SELECT_ARTIKAL,
     ON_CHANGE_ARTIKAL,
+    ON_ADD,
     CLEAR,
   }
   
+interface onAdd {
+  type  : ActionType.ON_ADD,
+  payload  : {data: any[]}
+}
+
   interface OnChangeUser {
     type: ActionType.ON_CHANGE_USER;
     payload: { username: string; password: string , name: string, surname:string, age:number};
@@ -30,4 +38,4 @@ export enum ActionType {
 
   }
   
-  export type Actions = OnChangeUser | Clear | OnChangeArtikal | OnSelectArtikal | onLogin;
+  export type Actions = OnChangeUser | Clear | OnChangeArtikal | OnSelectArtikal | onLogin | onAdd;
