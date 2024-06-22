@@ -17,6 +17,7 @@ import { ActionType, Actions } from './Actions';
 import { Dispatch } from "react";
 import userReducer from './reducers/UserReducer';
 import { theme } from './model/Theme';
+import { ArtikalProvider } from './ArtikalContext';
 
 
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
   return (
     <UserProvider>
       <BrowserRouter>
+      <ArtikalProvider>
         <ThemeProvider theme={theme}>
           <Routes>
             <Route path='/' element={<LogInView />} >
@@ -46,7 +48,8 @@ const App = () => {
               <Route path="/home" element={<Home />} />
             </Route>
           </Routes>
-        </ThemeProvider>
+        </ThemeProvider></ArtikalProvider>
+
       </BrowserRouter>
     </UserProvider>
 
