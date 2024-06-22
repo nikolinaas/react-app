@@ -68,8 +68,13 @@ border-color: #00809a !important;
 
 .appBar{
   background-color: #00809a !important;
+  display: flex;
+  justify-content: center;
 }
-
+.appBarGrid{
+  display: flex;
+  justify-content: center;
+}
 .table{
   height: 400px;
 }
@@ -88,4 +93,8 @@ background-color: #00809a;
   height: calc(100vh - 310px) !important;
   overflow: scroll !important;
  
+}
+
+.tableRowStyle:hover{
+background-color: #24aac5;
 }

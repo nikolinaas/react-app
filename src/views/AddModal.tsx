@@ -48,15 +48,7 @@ const AddModal = () => {
 
     }
 
-   function onChangeNumber(e:any) : void{
-      const re = /^[0-9\b]+$/;
-  
-      // if value is not blank, then test the regex
-  
-      if (e.target.value === '' || re.test(e.target.value)) {
-         setState({value: e.target.value})
-      }
-  }
+ 
     return (
       
       <div className="modal-wrapper">

@@ -23,7 +23,7 @@ const Home = () => {
         <div style={{ padding: 30 }}>
       <AppBar position="static"  className='appBar'>
 <Toolbar>
-<Grid container wrap="wrap">
+<Grid container wrap="wrap" className='appBarGrid'>
 <Grid item>
 <Typography variant="h6">{"Warehouse"}</Typography>
 </Grid>

@@ -3,7 +3,7 @@ import { TextField, withStyles } from "@material-ui/core";
 export const StyledTxtField = withStyles({
     root: {
       '& label': {
-        color: 'red',
+        color: 'black',
       },
       '& label.Mui-focused': {
         color: 'white',

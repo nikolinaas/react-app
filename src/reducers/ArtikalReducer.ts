@@ -20,6 +20,17 @@ function artikalReducer(state: Artikal, action: Actions): Artikal {
           //dodati ostale clanove klase
         };
       }
+      case ActionType.ON_SELECT_ARTIKAL: {
+        return {
+          ...state,
+          artikalId : action.payload.artikalId,
+          name: action.payload.name,
+          description : action.payload.description,
+          amount : action.payload.amount,
+          price : action.payload.price
+          //dodati ostale clanove klase
+        };
+      }
       default:
         return state;
     }
