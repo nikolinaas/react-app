@@ -11,9 +11,7 @@ const AddModal = () => {
   
   const artikalContext = useContext(ArtikalContext);
 
-    function setState(event:any): void {
-   
-    }
+
 
     function addArtikal(){
 

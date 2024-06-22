@@ -1,30 +1,64 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect, useReducer, useState } from 'react';
 import {
   Checkbox,
   Grid,
   TextField,
   FormControlLabel,
   Paper,
-  Button
+  Button,
+  ThemeProvider
 } from '@material-ui/core';
 import LogInView from './views/LogInView';
-import {UserProvider } from './UserContext';
-const LoginPage = () => {
-  const [checked, setChecked] = React.useState(true);
+import { UserContext, UserProvider } from './UserContext';
+import Home from './views/Home';
+import { BrowserRouter, Navigate, Outlet, Route, Router, Routes } from 'react-router-dom';
+import { initialState } from './model/User';
+import { ActionType, Actions } from './Actions';
+import { Dispatch } from "react";
+import userReducer from './reducers/UserReducer';
+import { theme } from './model/Theme';
+
+
+const App = () => {
+
+  const [state, dispatch] = useState(initialState);
 
 
 
+  function PrivateRoute() {
+    var logedIn = sessionStorage.getItem('logedin');
+    var user = null;
+    if (logedIn)
+      user = JSON.parse(logedIn);
+
+    return user == true ? <Outlet/> : <Navigate to="/login" replace />;
+  }
 
 
+
+  const [value, setValue] = useState(ActionType.ON_CHANGE_USER);
   return (
-    
+    <UserProvider>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <Routes>
+            <Route path='/' element={<LogInView />} >
+              <Route path="/login" element={<LogInView />} />
+            </Route>
+            <Route element={<PrivateRoute />}>
+              <Route path="/home" element={<Home />} />
+            </Route>
+          </Routes>
+        </ThemeProvider>
+      </BrowserRouter>
+    </UserProvider>
 
-    <div style={{ padding: 30, height:'100%' }}>
-   
 
-  
-    </div>
+
+
   );
 };
 
-export default LoginPage;
+export default App;
+
+

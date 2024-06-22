@@ -10,14 +10,12 @@ function artikalReducer(state: Artikal, action: Actions): Artikal {
           description : action.payload.description,
           amount : action.payload.amount,
           price : action.payload.price
-          //dodati ostale clanove klase
         };
       }
       case ActionType.CLEAR: {
         return {
           ...state,
           name: ''
-          //dodati ostale clanove klase
         };
       }
       case ActionType.ON_SELECT_ARTIKAL: {
@@ -28,7 +26,6 @@ function artikalReducer(state: Artikal, action: Actions): Artikal {
           description : action.payload.description,
           amount : action.payload.amount,
           price : action.payload.price
-          //dodati ostale clanove klase
         };
       }
       default:

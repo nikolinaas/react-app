@@ -1,14 +1,14 @@
-export class User{
-    username:string | undefined;
-    password : string | undefined;
-    name : string | undefined;
-    surname : string | undefined;
-    age : number | undefined;
+export interface User{
+    username:string ;
+    password : string;
+    name : string;
+    surname : string ;
+    age : number;
 }
 
 export const initialState: User = {
-    name: '',
-    username: '',
+    name: 'nam',
+    username: 'username',
     password: '',
     surname: '',
     age: 0

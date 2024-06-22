@@ -6,7 +6,7 @@ export const StyledTxtField = withStyles({
         color: 'black',
       },
       '& label.Mui-focused': {
-        color: 'white',
+        color: 'black ',
       },
       '& .MuiInput-underline:after': {
         borderBottomColor: 'yellow',
@@ -16,7 +16,7 @@ export const StyledTxtField = withStyles({
           borderColor: 'white',
         },
         '&:hover fieldset': {
-          borderColor: 'white',
+          borderColor: 'black',
         },
         '&.Mui-focused fieldset': {
           borderColor: '#00809a',

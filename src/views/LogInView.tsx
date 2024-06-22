@@ -15,18 +15,9 @@ import { UserContext, UserProvider } from '../UserContext';
 import { StyledTxtField } from './StyledTxtField';
 import LogInForm from './LogInForm';
 const LogInView = () => {
-  const [checked, setChecked] = React.useState(true);
+ 
 
-  const navigate = useNavigate();
-  function handleSubmit() {
-    console.log(userContext);
-  // navigate('/home');
-  }
 
-  function setState(parameter: any) {
-
-  }
-  const userContext = useContext(UserContext);
   return (
     <UserProvider>
 <div>

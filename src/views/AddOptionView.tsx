@@ -4,6 +4,7 @@ import { useState } from "react";
 import AddModal from "./AddModal";
 import Modal from "@mui/material/Modal";
 import { Box, Typography } from "@mui/material";
+import SearchBar from "./SearchForm";
 
 const AddOptionView = () => {
 
@@ -24,10 +25,12 @@ const AddOptionView = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+
+  
     return(
         
 <div className="addDiv">
-
+<SearchBar />
 <Button className="buttonAdd" onClick={handleOpen}><AddIcon></AddIcon>Add</Button>
 <Modal
   open={open}

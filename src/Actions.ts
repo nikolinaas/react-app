@@ -1,5 +1,6 @@
 export enum ActionType {
     ON_CHANGE_USER,
+    ON_LOGIN_USER,
     ON_SELECT_ARTIKAL,
     ON_CHANGE_ARTIKAL,
     CLEAR,
@@ -7,9 +8,13 @@ export enum ActionType {
   
   interface OnChangeUser {
     type: ActionType.ON_CHANGE_USER;
-    payload: { name: string; age: number };
+    payload: { username: string; password: string , name: string, surname:string, age:number};
   }
   
+  interface onLogin{
+    type: ActionType.ON_LOGIN_USER;
+    payload: { username: string; password: string };
+  }
   interface OnChangeArtikal {
     type: ActionType.ON_CHANGE_ARTIKAL;
     payload: { name: string; amount: number, price : number, description :string};
@@ -25,4 +30,4 @@ export enum ActionType {
 
   }
   
-  export type Actions = OnChangeUser | Clear | OnChangeArtikal | OnSelectArtikal;
+  export type Actions = OnChangeUser | Clear | OnChangeArtikal | OnSelectArtikal | onLogin;

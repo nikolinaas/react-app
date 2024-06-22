@@ -72,7 +72,7 @@ const TableView = () => {
 
   return (
     <div>
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} className='tableContainer'>
       <Table key={tableArticles} className='table'>
         <TableHead className='tableHeadClass'>
           <TableRow>

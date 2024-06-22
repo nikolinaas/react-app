@@ -1,4 +1,5 @@
-import { Actions,ActionType } from "../Actions";
+import { act } from "react";
+import { Actions, ActionType } from "../Actions";
 import { User } from '../model/User';
 
 function userReducer(state: User, action: Actions): User {
@@ -6,15 +7,25 @@ function userReducer(state: User, action: Actions): User {
     case ActionType.ON_CHANGE_USER: {
       return {
         ...state,
+        username: action.payload.username,
+        password: action.payload.password,
         name: action.payload.name,
-        age: action.payload.age,
+        surname: action.payload.surname,
+        age: action.payload.age
+      };
+    }
+    case ActionType.ON_LOGIN_USER: {
+      return {
+        ...state,
+        username: action.payload.username,
+        password: action.payload.password
       };
     }
     case ActionType.CLEAR: {
       return {
         ...state,
-        name: '',
-        age: 0,
+        username: '',
+        password: '',
       };
     }
     default:

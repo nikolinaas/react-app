@@ -7,13 +7,10 @@ import { Artikal } from "../model/Artikal";
 import SaveIcon from '@mui/icons-material/Save';
 
 
-const ShowArtikalDeatil = () => {
+const ShowArtikalDeatils = () => {
 
     const artikalContext = useContext(ArtikalContext);
 
-    function setState(event: any): void {
-
-    }
 
     function editArtikal() {
         var items: Artikal[] = [];
@@ -136,4 +133,4 @@ const ShowArtikalDeatil = () => {
     );
 };
 
-export default ShowArtikalDeatil;
+export default ShowArtikalDeatils;
