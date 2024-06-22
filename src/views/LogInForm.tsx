@@ -11,7 +11,7 @@ import {
     Typography
 } from '@material-ui/core';
 import { Link, useNavigate } from 'react-router-dom';
-import { UserContext, UserProvider } from '../UserContext';
+import { UserContext, UserProvider } from '../contexts/UserContext';
 import { StyledTxtField } from './StyledTxtField';
 import { User } from '../model/User';
 import { json } from 'stream/consumers';

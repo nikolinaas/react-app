@@ -1,7 +1,7 @@
 import { Dispatch, FC, ReactNode, createContext, useReducer } from "react";
-import { User, initialState } from "./model/User";
-import { Actions } from "./Actions";
-import userReducer from "./reducers/UserReducer";
+import { User, initialState } from "../model/User";
+import { Actions } from "../Actions";
+import userReducer from "../reducers/UserReducer";
 
  interface UserContextType {
     user: User;

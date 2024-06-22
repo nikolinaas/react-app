@@ -1,6 +1,6 @@
 import { Button, Grid, TextField, withStyles } from "@material-ui/core";
 import { StyledTxtField } from "./StyledTxtField";
-import { ArtikalContext, ArtikalProvider } from "../ArtikalContext";
+import { ArtikalContext, ArtikalProvider } from "../contexts/ArtikalContext";
 import { useContext, useEffect } from "react";
 import { ActionType } from "../Actions";
 import { Artikal } from "../model/Artikal";

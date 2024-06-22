@@ -16,12 +16,11 @@ import {
   TableRow,
   TableBody
 } from '@material-ui/core';
-import { ArtikalContext, ArtikalProvider } from '../ArtikalContext';
+import { ArtikalContext, ArtikalProvider } from '../contexts/ArtikalContext';
 import PersonIcon from '@mui/icons-material/Person';
 import { useLocation } from 'react-router-dom';
-import { UserContext } from '../UserContext';
+import { UserContext } from '../contexts/UserContext';
 import { ActionType } from '../Actions';
-import { SearchProvider } from '../SearchContext';
 import AddModal from './AddModal';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
@@ -135,7 +134,7 @@ const Home = () => {
 
   return (
     
-      <SearchProvider >
+    
         <div style={{ padding: 30 }}>
           <AppBar position="static" className='appBar'>
             <Toolbar>
@@ -221,7 +220,6 @@ const Home = () => {
             </Box>
           </Modal>
         </div>
-      </SearchProvider>
   );
 };
 

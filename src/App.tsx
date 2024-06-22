@@ -9,7 +9,7 @@ import {
   ThemeProvider
 } from '@material-ui/core';
 import LogInView from './views/LogInView';
-import { UserContext, UserProvider } from './UserContext';
+import { UserContext, UserProvider } from './contexts/UserContext';
 import Home from './views/Home';
 import { BrowserRouter, Navigate, Outlet, Route, Router, Routes } from 'react-router-dom';
 import { initialState } from './model/User';
@@ -17,7 +17,7 @@ import { ActionType, Actions } from './Actions';
 import { Dispatch } from "react";
 import userReducer from './reducers/UserReducer';
 import { theme } from './model/Theme';
-import { ArtikalProvider } from './ArtikalContext';
+import { ArtikalProvider } from './contexts/ArtikalContext';
 
 
 const App = () => {

@@ -1,7 +1,7 @@
 import { Dispatch, FC, ReactNode, createContext, useReducer } from "react";
-import { Artikal, initialState } from "./model/Artikal";
-import { Actions } from "./Actions";
-import artikalReducer from "./reducers/ArtikalReducer";
+import { Artikal, initialState } from "../model/Artikal";
+import { Actions } from "../Actions";
+import artikalReducer from "../reducers/ArtikalReducer";
 
 
 interface ArtikalContextType {
