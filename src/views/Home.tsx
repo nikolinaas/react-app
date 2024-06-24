@@ -203,7 +203,7 @@ const Home = () => {
                     <TableCell align="center" style={{ overflow: 'wrap', width: '20%' }}>{row.amount}</TableCell>
                     <TableCell align="center" style={{ overflow: 'wrap', width: '20%' }}>{row.price}</TableCell>
                     <TableCell align="center" style={{ overflow: 'wrap', width: '20%' }}>{row.description}</TableCell>
-                    <TableCell align="center"><Button className='buttonClass' onClick={() => deleteArtikal(row)}><DeleteIcon></DeleteIcon>Delete</Button></TableCell>
+                    <TableCell onClick={(e) => {e.stopPropagation(); deleteArtikal(row)}} align="center"><Button className='buttonClass' ><DeleteIcon></DeleteIcon>Delete</Button></TableCell>
                   </TableRow>
                 ))}
               </TableBody>
